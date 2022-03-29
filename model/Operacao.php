@@ -18,13 +18,13 @@ class Operacao{
     function getFrutas(){
         $stmt = $this->con->prepare("Select * from frutas_tb");
         $stmt -> execute();
-        $stmt -> bind_result($uid,$nomefruta,$imgfruta,$valorfruta);
+        $stmt -> bind_result($uidfruta,$nomefruta,$imgfruta,$valorfruta);
 
         $dicas = array();
 
         while($stmt->fetch()){
             $dica = array();
-            $dica['uid']= $uid;
+            $dica['uidfruta']= $uidfruta;
             $dica['nomefruta']=$nomefruta;
             $dica['imgfruta']=$imgfruta;
             $dica['valorfruta']=$valorfruta;
